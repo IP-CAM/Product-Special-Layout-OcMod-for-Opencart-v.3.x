@@ -1,6 +1,6 @@
 # Product Special Layout
 > Defina um modelo de layout especial para produtos especiais, você pode criar arquivos de saida diferentes para produtos diferentes.
-> No exemplo criamos um arquivo chamado "produtTspecial.twig" no qua carrega um visual diferente para alguns produtos.
+> No exemplo criamos um arquivo chamado "product_special.twig" no qua carrega um visual diferente para alguns produtos.
 > No produto basta selecionar na aba design o novo modelo visual criado. 
 
 ### Create New Layout 
