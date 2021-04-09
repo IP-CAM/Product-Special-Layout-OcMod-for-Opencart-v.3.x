@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name><![CDATA[Product special layout]]></name>
+  <code><![CDATA[reds_get_products_by_layout]]></code>
+	<version><![CDATA[3.0]]></version>
+	<author><![CDATA[REDS]]></author>
+	<link><![CDATA[https://www.agenciaprai.com/]]></link>
+		/*
+		Create a layout in layout (design > layout > new)
+		Define the route, ex: product/product_special
+		Add the new name in the xml and copy the ID to the "layout id" field ->"product_special"
+		*/
+		
+    <file path="catalog/controller/product/product.php">
+			<operation error="skip">
+				<search><![CDATA[$this->response->setOutput($this->load->view('product/product', $data));]]></search>
+				<add position="replace"><![CDATA[
+			// @reds Get product by layout
+			$layout_id = $this->model_catalog_product->getProductLayoutId($this->request->get['product_id']);
+			// add layout ID
+			if($layout_id == 14){
+				$this->response->setOutput($this->load->view('product/product_special', $data));
+			} else {
+				$this->response->setOutput($this->load->view('product/product', $data));
+			}
+			// @reds
+				]]></add>
+			</operation>
+    </file>
+</modification>
